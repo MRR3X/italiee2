@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:italiee2/main.dart';
 import 'package:italiee2/Pages/Day1.dart';
 import 'package:italiee2/Pages/Day2.dart';
 import 'package:italiee2/Pages/Day3.dart';
@@ -14,156 +13,200 @@ class SecondRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-      child: Container(
-        color: Colors.green[100],
-        child: SafeArea(
-          child: Stack(
-            children: <Widget>[
-              Positioned(
-                  bottom: 500,
-                  right: 283,
-                  child: SizedBox(
-                      width: 100,
-                      height: 100,
-                      child: RaisedButton(
-                          color: Colors.green,
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => Day1()),
-                            );
-                          },
-                          child: Text('Dag 1')))),
-              Positioned(
-                  bottom: 500,
-                  right: 155,
-                  child: SizedBox(
-                      width: 100,
-                      height: 100,
-                      child: RaisedButton(
-                          color: Colors.white,
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => Day2()),
-                            );
-                          },
-                          child: Text('Dag 2')))),
-              Positioned(
-                bottom: 500,
-                right: 27,
-                child: SizedBox(
-                  width: 100,
-                  height: 100,
-                  child: RaisedButton(
-                    color: Colors.red,
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Day3()));
-                    },
-                    child: Text('Dag 3'),
-                  ),
+        appBar: AppBar(
+          title: RichText(
+            text: TextSpan(
+                text: 'Italië reis',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
+          ),
+          backgroundColor: Colors.green,
+        ),
+        drawer: Drawer(
+          elevation: 50,
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: const <Widget>[
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.green,
                 ),
-              ),
-              Positioned(
-                  bottom: 372,
-                  right: 283,
-                  child: SizedBox(
-                      width: 100,
-                      height: 100,
-                      child: RaisedButton(
-                          color: Colors.green,
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => Day4()),
-                            );
-                          },
-                          child: Text('Dag 4')))),
-              Positioned(
-                  bottom: 372,
-                  right: 155,
-                  child: SizedBox(
-                      width: 100,
-                      height: 100,
-                      child: RaisedButton(
-                          color: Colors.white,
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => Day5()),
-                            );
-                          },
-                          child: Text('Dag 5')))),
-              Positioned(
-                bottom: 372,
-                right: 27,
-                child: SizedBox(
-                  width: 100,
-                  height: 100,
-                  child: RaisedButton(
-                    color: Colors.red,
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Day6()));
-                    },
-                    child: Text('Dag 6'),
-                  ),
-                ),
-              ),
-              Positioned(
-                bottom: 244,
-                right: 283,
-                child: SizedBox(
-                  width: 100,
-                  height: 100,
-                  child: RaisedButton(
-                    color: Colors.green,
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Day7()));
-                    },
-                    child: Text('Dag 7'),
-                  ),
-                ),
-              ),
-              Positioned(
-                bottom: 244,
-                right: 155,
-                child: SizedBox(
-                  width: 100,
-                  height: 100,
-                  child: RaisedButton(
+                child: Text(
+                  'Overzicht',
+                  style: TextStyle(
                     color: Colors.white,
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Day8()));
-                    },
-                    child: Text('Dag 8'),
+                    fontSize: 24,
                   ),
                 ),
               ),
-              Positioned(
-                bottom: 244,
-                right: 27,
-                child: SizedBox(
-                  width: 100,
-                  height: 100,
-                  child: RaisedButton(
-                    color: Colors.red,
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Day9()));
-                    },
-                    child: Text('Dag 9'),
-                  ),
-                ),
-              )
+              ListTile(
+                leading: Icon(Icons.message),
+                title: Text('Messages'),
+              ),
+              ListTile(
+                leading: Icon(Icons.account_circle),
+                title: Text('Profile'),
+              ),
+              ListTile(
+                leading: Icon(Icons.settings),
+                title: Text('Settings'),
+              ),
             ],
           ),
         ),
-      ),
-    ));
+        body: Center(
+          child: SafeArea(
+            child: Container(
+              color: Colors.green[100],
+              child: Stack(
+                children: <Widget>[
+                  Positioned(
+                      bottom: 500,
+                      right: 283,
+                      child: SizedBox(
+                          width: 100,
+                          height: 100,
+                          child: RaisedButton(
+                              color: Colors.green,
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Day1()),
+                                );
+                              },
+                              child: Text('Dag 1')))),
+                  Positioned(
+                      bottom: 500,
+                      right: 155,
+                      child: SizedBox(
+                          width: 100,
+                          height: 100,
+                          child: RaisedButton(
+                              color: Colors.white,
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Day2()),
+                                );
+                              },
+                              child: Text('Dag 2')))),
+                  Positioned(
+                    bottom: 500,
+                    right: 27,
+                    child: SizedBox(
+                      width: 100,
+                      height: 100,
+                      child: RaisedButton(
+                        color: Colors.red,
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Day3()));
+                        },
+                        child: Text('Dag 3'),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                      bottom: 372,
+                      right: 283,
+                      child: SizedBox(
+                          width: 100,
+                          height: 100,
+                          child: RaisedButton(
+                              color: Colors.green,
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Day4()),
+                                );
+                              },
+                              child: Text('Dag 4')))),
+                  Positioned(
+                      bottom: 372,
+                      right: 155,
+                      child: SizedBox(
+                          width: 100,
+                          height: 100,
+                          child: RaisedButton(
+                              color: Colors.white,
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Day5()),
+                                );
+                              },
+                              child: Text('Dag 5')))),
+                  Positioned(
+                    bottom: 372,
+                    right: 27,
+                    child: SizedBox(
+                      width: 100,
+                      height: 100,
+                      child: RaisedButton(
+                        color: Colors.red,
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Day6()));
+                        },
+                        child: Text('Dag 6'),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    bottom: 244,
+                    right: 283,
+                    child: SizedBox(
+                      width: 100,
+                      height: 100,
+                      child: RaisedButton(
+                        color: Colors.green,
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Day7()));
+                        },
+                        child: Text('Dag 7'),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    bottom: 244,
+                    right: 155,
+                    child: SizedBox(
+                      width: 100,
+                      height: 100,
+                      child: RaisedButton(
+                        color: Colors.white,
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Day8()));
+                        },
+                        child: Text('Dag 8'),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    bottom: 244,
+                    right: 27,
+                    child: SizedBox(
+                      width: 100,
+                      height: 100,
+                      child: RaisedButton(
+                        color: Colors.red,
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Day9()));
+                        },
+                        child: Text('Dag 9'),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+        ));
   }
 }
