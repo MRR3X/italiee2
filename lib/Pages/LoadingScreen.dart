@@ -1,3 +1,5 @@
+import 'dart:ui' as prefix0;
+
 import 'package:flutter/material.dart';
 import 'package:italiee2/Pages/HomePage.dart';
 
@@ -5,46 +7,59 @@ class FirstRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-      child: Container(
-          height: 800,
-          width: 800,
-          color: Colors.amber[200],
-          child: SafeArea(
-            child: new Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-                  SizedBox(
-                    width: 300,
-                    height: 150,
-                    child: new RaisedButton(
-                        shape: new RoundedRectangleBorder(
-                            borderRadius: new BorderRadius.circular(200),
-                            side: BorderSide(color: Colors.red, width: 3)),
-                        child: Text(
-                          "WELKOM",
-                          style: TextStyle(fontSize: 50.0),
-                        ),
-                        color: Colors.amber[100],
-                        textColor: Colors.black,
-                        padding: EdgeInsets.all(9.0),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SecondRoute()),
-                          );
-                        }),
+      body: Center(
+          child: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: <Color>[
+              Colors.deepPurple,
+              Colors.pink,
+            ])),
+        child: SafeArea(
+            child: Stack(children: <Widget>[
+          Positioned(
+            child: SizedBox(
+              child: Row(),
+            ),
+          ),
+          Positioned(
+            left: 50,
+            bottom: 60,
+            child: SizedBox(
+              width: 300,
+              height: 150,
+              child: new RaisedButton(
+                  color: Colors.purple[300],
+                  shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(200),
+                      side: BorderSide(color: Colors.black, width: 2)),
+                  child: Text(
+                    "WELKOM",
+                    style: TextStyle(fontSize: 50.0),
                   ),
-                  new FlatButton(
-                      textColor: Colors.black,
-                      color: Colors.amber[100],
-                      onPressed: null,
-                      child: Text("Made by Sjensei COMPANY®",
-                          style: TextStyle(fontSize: 15.0)))
-                ]),
-          )),
-    ));
+                  textColor: Colors.black,
+                  padding: EdgeInsets.all(9.0),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SecondRoute()),
+                    );
+                  }),
+            ),
+          ),
+          Align(
+              alignment: Alignment.bottomCenter,
+              child: FlatButton(
+                  textColor: Colors.black,
+                  color: Colors.amber[100],
+                  onPressed: null,
+                  child: Text("Made by Sjensei COMPANY®",
+                      style: TextStyle(
+                          fontSize: 20.0, fontWeight: FontWeight.bold))))
+        ])),
+      )),
+    );
   }
 }

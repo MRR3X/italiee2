@@ -1,6 +1,7 @@
 import 'dart:math';
-
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:italiee2/Pages/Day1.dart';
 import 'package:italiee2/Pages/Day2.dart';
 import 'package:italiee2/Pages/Day3.dart';
@@ -20,31 +21,64 @@ class SecondRoute extends StatelessWidget {
         child: SafeArea(
           child: Scaffold(
               appBar: AppBar(
-                title: RichText(
-                  textAlign: TextAlign.center,
-                  text: TextSpan(
-                      text: 'Italië reis ',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 45,
-                          shadows: [
-                            Shadow(
-                                // bottomLeft
-                                offset: Offset(-2.5, -2),
-                                color: Colors.black),
-                          ])),
+                flexibleSpace: Container(
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          begin: Alignment.bottomLeft,
+                          end: Alignment.topRight,
+                          colors: <Color>[
+                        Colors.green,
+                        Colors.white,
+                        Colors.white,
+                        Colors.red
+                      ])),
                 ),
-                backgroundColor: Colors.green,
+                title: Center(
+                  child: RichText(
+                    text: TextSpan(
+                        text: 'Ital',
+                        style: TextStyle(
+                            color: Colors.green,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 45,
+                            shadows: [
+                              Shadow(
+                                  // bottomLeft
+                                  offset: Offset(-2, -1.5),
+                                  color: Colors.black),
+                              Shadow(
+                                  offset: Offset(1.5, 1), color: Colors.black)
+                            ]),
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: 'ië',
+                            style: TextStyle(color: Colors.white, shadows: [
+                              Shadow(
+                                  // bottomLeft
+                                  offset: Offset(-2, -1.5),
+                                  color: Colors.black),
+                              Shadow(
+                                  offset: Offset(1.5, 1), color: Colors.black)
+                            ]),
+                          ),
+                          TextSpan(
+                              text: ' reis',
+                              style: TextStyle(color: Colors.red)),
+                        ]),
+                  ),
+                ),
               ),
               drawer: Drawer(
                 child: ListView(padding: EdgeInsets.zero, children: <Widget>[
                   DrawerHeader(
                       decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage("assets/Images/italie.png"),
-                            fit: BoxFit.cover),
-                        color: Colors.green,
-                      ),
+                          gradient: LinearGradient(
+                              begin: Alignment.centerLeft,
+                              end: Alignment.centerRight,
+                              colors: <Color>[
+                            Colors.green,
+                            Colors.red,
+                          ])),
                       child: Container(
                         alignment: Alignment.center,
                         child: Text(
@@ -67,7 +101,7 @@ class SecondRoute extends StatelessWidget {
                           borderRadius: new BorderRadius.circular(0),
                           side: BorderSide(color: Colors.black, width: 0.5)),
                       elevation: 500,
-                      color: Colors.red,
+                      color: Colors.yellow,
                       child: ListTile(
                         leading: Icon(Icons.add_circle_outline),
                         title: Text(
@@ -298,11 +332,15 @@ class SecondRoute extends StatelessWidget {
               body: Center(
                 child: SafeArea(
                   child: Container(
-                    color: Colors.green[100],
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            begin: Alignment.topRight,
+                            end: Alignment.bottomCenter,
+                            colors: <Color>[Colors.green, Colors.white])),
                     child: Stack(
                       children: <Widget>[
                         Positioned(
-                            bottom: 500,
+                            bottom: 590,
                             right: 283,
                             child: SizedBox(
                                 width: 100,
@@ -318,7 +356,7 @@ class SecondRoute extends StatelessWidget {
                                     },
                                     child: Text('Dag 1')))),
                         Positioned(
-                            bottom: 500,
+                            bottom: 590,
                             right: 155,
                             child: SizedBox(
                                 width: 100,
@@ -334,7 +372,7 @@ class SecondRoute extends StatelessWidget {
                                     },
                                     child: Text('Dag 2')))),
                         Positioned(
-                          bottom: 500,
+                          bottom: 590,
                           right: 27,
                           child: SizedBox(
                             width: 100,
@@ -352,7 +390,7 @@ class SecondRoute extends StatelessWidget {
                           ),
                         ),
                         Positioned(
-                            bottom: 372,
+                            bottom: 460,
                             right: 283,
                             child: SizedBox(
                                 width: 100,
@@ -368,7 +406,7 @@ class SecondRoute extends StatelessWidget {
                                     },
                                     child: Text('Dag 4')))),
                         Positioned(
-                            bottom: 372,
+                            bottom: 460,
                             right: 155,
                             child: SizedBox(
                                 width: 100,
@@ -384,7 +422,7 @@ class SecondRoute extends StatelessWidget {
                                     },
                                     child: Text('Dag 5')))),
                         Positioned(
-                          bottom: 372,
+                          bottom: 460,
                           right: 27,
                           child: SizedBox(
                             width: 100,
@@ -402,7 +440,7 @@ class SecondRoute extends StatelessWidget {
                           ),
                         ),
                         Positioned(
-                          bottom: 244,
+                          bottom: 330,
                           right: 283,
                           child: SizedBox(
                             width: 100,
@@ -420,7 +458,7 @@ class SecondRoute extends StatelessWidget {
                           ),
                         ),
                         Positioned(
-                          bottom: 244,
+                          bottom: 330,
                           right: 155,
                           child: SizedBox(
                             width: 100,
@@ -438,7 +476,7 @@ class SecondRoute extends StatelessWidget {
                           ),
                         ),
                         Positioned(
-                          bottom: 244,
+                          bottom: 330,
                           right: 27,
                           child: SizedBox(
                             width: 100,
@@ -453,6 +491,33 @@ class SecondRoute extends StatelessWidget {
                               },
                               child: Text('Dag 9'),
                             ),
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 70,
+                          right: 32,
+                          child: SizedBox(
+                              width: 350,
+                              height: 100,
+                              child: RaisedButton(
+                                color: Colors.yellow,
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Emergency()));
+                                },
+                                child: Text(
+                                  "NOODNUMMERS",
+                                  style: TextStyle(fontSize: 30),
+                                  textAlign: TextAlign.center,
+                                ),
+                              )),
+                        ),
+                        Align(
+                          alignment: Alignment.bottomCenter,
+                          child: FlatButton(
+                            child: Text('Made by Chen Hao'),
                           ),
                         )
                       ],
@@ -495,7 +560,7 @@ class SecondRoute extends StatelessWidget {
                                       fontWeight: FontWeight.bold),
                                 ),
                                 onPressed: () {
-                                  Navigator.of(context).pop();
+                                  SystemNavigator.pop();
                                 }),
                             FlatButton(
                                 child: Text(
