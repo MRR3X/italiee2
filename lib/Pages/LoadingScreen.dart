@@ -30,11 +30,11 @@ class FirstRoute extends StatelessWidget {
             child: SizedBox(
               width: 300,
               height: 150,
-              child: new RaisedButton(
-                  color: Colors.purple[300],
+              child: FlatButton(
+                  color: Colors.transparent,
                   shape: new RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(200),
-                      side: BorderSide(color: Colors.black, width: 2)),
+                      side: BorderSide(color: Colors.black, width: 4)),
                   child: Text(
                     "WELKOM",
                     style: TextStyle(fontSize: 50.0),
