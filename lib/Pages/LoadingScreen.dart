@@ -14,8 +14,11 @@ class FirstRoute extends StatelessWidget {
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
                 colors: <Color>[
-              Colors.deepPurple,
-              Colors.pink,
+              Colors.green,
+              Colors.green,
+              Colors.white,
+              Colors.white,
+              Colors.red,
             ])),
         child: SafeArea(
             child: Stack(children: <Widget>[
@@ -30,8 +33,9 @@ class FirstRoute extends StatelessWidget {
             child: SizedBox(
               width: 300,
               height: 150,
-              child: FlatButton(
+              child: RaisedButton(
                   color: Colors.transparent,
+                  elevation: 0,
                   shape: new RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(200),
                       side: BorderSide(color: Colors.black, width: 4)),

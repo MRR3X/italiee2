@@ -269,6 +269,7 @@ class Day3 extends StatelessWidget {
         ]),
       ),
       appBar: AppBar(
+        iconTheme: new IconThemeData(color: Colors.black),
         backgroundColor: Color(0xffff1f44),
         title: Text("Dag 3"),
       ),
