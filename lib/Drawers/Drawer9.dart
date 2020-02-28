@@ -77,7 +77,6 @@ class Menu9 extends StatelessWidget {
             }),
         SizedBox(
           height: 4,
-          child: FlatButton(),
         ),
         FlatButton(
             child: ListTile(
@@ -110,7 +109,6 @@ class Menu9 extends StatelessWidget {
             }),
         SizedBox(
           height: 2,
-          child: FlatButton(),
         ),
         RaisedButton(
             shape: new RoundedRectangleBorder(
@@ -128,7 +126,6 @@ class Menu9 extends StatelessWidget {
             }),
         SizedBox(
           height: 2,
-          child: FlatButton(),
         ),
         RaisedButton(
             color: Colors.grey[350],
@@ -147,7 +144,6 @@ class Menu9 extends StatelessWidget {
             }),
         SizedBox(
           height: 2,
-          child: FlatButton(),
         ),
         RaisedButton(
             shape: new RoundedRectangleBorder(
@@ -203,7 +199,6 @@ class Menu9 extends StatelessWidget {
             }),
         SizedBox(
           height: 2,
-          child: FlatButton(),
         ),
         RaisedButton(
             color: Colors.grey[350],
@@ -240,26 +235,22 @@ class Menu9 extends StatelessWidget {
             }),
         SizedBox(
           height: 2,
-          child: FlatButton(),
         ),
-        RaisedButton(
-            color: Colors.grey[350],
-            shape: new RoundedRectangleBorder(
-                borderRadius: new BorderRadius.circular(0),
-                side: BorderSide(color: Colors.black, width: 0.5)),
-            child: ListTile(
-              leading: Icon(
-                Icons.home,
-              ),
-              title: Text('Dag 9'),
+        FlatButton(
+          color: Colors.green[200],
+          shape: new RoundedRectangleBorder(
+              borderRadius: new BorderRadius.circular(0),
+              side: BorderSide(color: Colors.black, width: 0.5)),
+          child: ListTile(
+            leading: Icon(
+              Icons.home,
             ),
-            onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Day9()));
-            }),
+            title: Text('Dag 9'),
+          ),
+          onPressed: () {},
+        ),
         SizedBox(
           height: 50,
-          child: FlatButton(),
         ),
         SizedBox(
           child: FlatButton(

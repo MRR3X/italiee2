@@ -188,19 +188,18 @@ class Menu6 extends StatelessWidget {
           child: FlatButton(),
         ),
         RaisedButton(
-            shape: new RoundedRectangleBorder(
-                borderRadius: new BorderRadius.circular(0),
-                side: BorderSide(color: Colors.black, width: 0.5)),
-            child: ListTile(
-              leading: Icon(
-                Icons.account_balance,
-              ),
-              title: Text('Dag 6'),
+          color: Colors.green[200],
+          shape: new RoundedRectangleBorder(
+              borderRadius: new BorderRadius.circular(0),
+              side: BorderSide(color: Colors.black, width: 0.5)),
+          child: ListTile(
+            leading: Icon(
+              Icons.account_balance,
             ),
-            onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Day6()));
-            }),
+            title: Text('Dag 6'),
+          ),
+          onPressed: () {},
+        ),
         SizedBox(
           height: 2,
           child: FlatButton(),

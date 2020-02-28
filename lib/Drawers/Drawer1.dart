@@ -77,7 +77,6 @@ class Menu1 extends StatelessWidget {
             }),
         SizedBox(
           height: 4,
-          child: FlatButton(),
         ),
         FlatButton(
             child: ListTile(
@@ -89,28 +88,24 @@ class Menu1 extends StatelessWidget {
         )),
         SizedBox(
           height: 4,
-          child: FlatButton(),
         ),
         RaisedButton(
-            color: Colors.grey[350],
-            shape: new RoundedRectangleBorder(
-                borderRadius: new BorderRadius.circular(0),
-                side: BorderSide(color: Colors.black, width: 0.5)),
-            child: ListTile(
-                leading: Icon(
-                  Icons.directions_bus,
-                ),
-                title: Text(
-                  'Dag 1',
-                  style: TextStyle(fontSize: 15),
-                )),
-            onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Day1()));
-            }),
+          color: Colors.green[200],
+          shape: new RoundedRectangleBorder(
+              borderRadius: new BorderRadius.circular(0),
+              side: BorderSide(color: Colors.black, width: 0.5)),
+          child: ListTile(
+              leading: Icon(
+                Icons.directions_bus,
+              ),
+              title: Text(
+                'Dag 1',
+                style: TextStyle(fontSize: 15),
+              )),
+          onPressed: () {},
+        ),
         SizedBox(
           height: 2,
-          child: FlatButton(),
         ),
         RaisedButton(
             shape: new RoundedRectangleBorder(
@@ -128,7 +123,6 @@ class Menu1 extends StatelessWidget {
             }),
         SizedBox(
           height: 2,
-          child: FlatButton(),
         ),
         RaisedButton(
             color: Colors.grey[350],
@@ -147,7 +141,6 @@ class Menu1 extends StatelessWidget {
             }),
         SizedBox(
           height: 2,
-          child: FlatButton(),
         ),
         RaisedButton(
             shape: new RoundedRectangleBorder(
@@ -165,7 +158,6 @@ class Menu1 extends StatelessWidget {
             }),
         SizedBox(
           height: 2,
-          child: FlatButton(),
         ),
         RaisedButton(
             color: Colors.grey[350],
@@ -185,7 +177,6 @@ class Menu1 extends StatelessWidget {
             }),
         SizedBox(
           height: 2,
-          child: FlatButton(),
         ),
         RaisedButton(
             shape: new RoundedRectangleBorder(
@@ -203,7 +194,6 @@ class Menu1 extends StatelessWidget {
             }),
         SizedBox(
           height: 2,
-          child: FlatButton(),
         ),
         RaisedButton(
             color: Colors.grey[350],
@@ -222,7 +212,6 @@ class Menu1 extends StatelessWidget {
             }),
         SizedBox(
           height: 2,
-          child: FlatButton(),
         ),
         RaisedButton(
             shape: new RoundedRectangleBorder(
@@ -240,7 +229,6 @@ class Menu1 extends StatelessWidget {
             }),
         SizedBox(
           height: 2,
-          child: FlatButton(),
         ),
         RaisedButton(
             color: Colors.grey[350],
@@ -259,7 +247,6 @@ class Menu1 extends StatelessWidget {
             }),
         SizedBox(
           height: 50,
-          child: FlatButton(),
         ),
         SizedBox(
           child: FlatButton(
