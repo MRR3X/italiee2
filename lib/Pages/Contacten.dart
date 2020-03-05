@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:italiee2/Drawers/Drawer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'package:italiee2/Drawers/Drawer.dart';
-
 class Contacten extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

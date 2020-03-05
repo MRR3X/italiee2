@@ -1,69 +1,102 @@
-import 'dart:ui' as prefix0;
+import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:italiee2/Pages/HomePage.dart';
 
-class FirstRoute extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return Splash();
+  }
+}
+
+class Splash extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    startTimer();
+  }
+
+  startTimer() async {
+    var time = Duration(seconds: 3);
+    return Timer(time, route);
+  }
+
+  route() {
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => Homepage()));
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
+    return SafeArea(
+      child: Scaffold(
+        body: Center(
           child: Container(
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.topRight,
-                end: Alignment.bottomLeft,
-                colors: <Color>[
-              Colors.green,
-              Colors.green,
-              Colors.white,
-              Colors.white,
-              Colors.red,
-            ])),
-        child: SafeArea(
-            child: Stack(children: <Widget>[
-          Positioned(
-            child: SizedBox(
-              child: Row(),
-            ),
-          ),
-          Positioned(
-            left: 50,
-            bottom: 60,
-            child: SizedBox(
-              width: 300,
-              height: 150,
-              child: RaisedButton(
-                  color: Colors.transparent,
-                  elevation: 0,
-                  shape: new RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(200),
-                      side: BorderSide(color: Colors.black, width: 4)),
-                  child: Text(
-                    "WELKOM",
-                    style: TextStyle(fontSize: 50.0),
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topRight,
+                      end: Alignment.bottomLeft,
+                      colors: <Color>[
+                    Colors.green,
+                    Colors.green,
+                    Colors.white,
+                    Colors.white,
+                    Colors.red,
+                  ])),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        child: Image.asset(
+                          "Images/logo.png",
+                          width: 200,
+                        ),
+                      ),
+                    ],
                   ),
-                  textColor: Colors.black,
-                  padding: EdgeInsets.all(9.0),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SecondRoute()),
-                    );
-                  }),
-            ),
-          ),
-          Align(
-              alignment: Alignment.bottomCenter,
-              child: FlatButton(
-                  textColor: Colors.black,
-                  color: Colors.amber[100],
-                  onPressed: null,
-                  child: Text("Made by Sjensei COMPANY®",
-                      style: TextStyle(
-                          fontSize: 20.0, fontWeight: FontWeight.bold))))
-        ])),
-      )),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Padding(
+                        padding: EdgeInsets.only(top: 50),
+                      ),
+                      Text(
+                        "ITALIEE",
+                        style: TextStyle(fontSize: 80, color: Colors.black),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Padding(
+                        padding: EdgeInsets.only(top: 50),
+                      ),
+                      CircularProgressIndicator(
+                        backgroundColor: Colors.white,
+                        strokeWidth: 2,
+                      )
+                    ],
+                  ),
+                  Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: <Widget>[
+                        Card(
+                          elevation: 0,
+                          child: Text(
+                            "Made By Sjensei©",
+                            style: TextStyle(color: Colors.black, fontSize: 15),
+                          ),
+                        )
+                      ]),
+                ],
+              )),
+        ),
+      ),
     );
   }
 }

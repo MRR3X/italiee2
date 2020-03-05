@@ -13,7 +13,7 @@ import 'package:italiee2/Pages/Contacten.dart';
 import 'package:italiee2/Pages/Emergency.dart';
 import 'package:italiee2/Drawers/Drawer.dart';
 
-class SecondRoute extends StatelessWidget {
+class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(

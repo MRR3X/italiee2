@@ -8,8 +8,7 @@ void main() {
       .then((_) {
     runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Navigation Basics',
-      home: FirstRoute(),
+      home: SplashScreen(),
     ));
   });
 }
