@@ -82,17 +82,6 @@ class Splash extends State<SplashScreen> {
                       )
                     ],
                   ),
-                  Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: <Widget>[
-                        Card(
-                          elevation: 0,
-                          child: Text(
-                            "Made By Sjensei©",
-                            style: TextStyle(color: Colors.black, fontSize: 15),
-                          ),
-                        )
-                      ]),
                 ],
               )),
         ),
