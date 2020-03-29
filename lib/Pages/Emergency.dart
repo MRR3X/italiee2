@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:italiee2/Drawers/Drawer.dart';
+import 'package:italiee2/Extra/Drawer.dart';
 import 'package:italiee2/Pages/Contacten.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -8,15 +8,12 @@ class Emergency extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            endDrawer: Menu(),
             appBar: AppBar(
+              centerTitle: true,
               iconTheme: new IconThemeData(color: Colors.black),
-              title: Center(
-                child: Text(
-                  "NOODNUMMERS",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.black, fontSize: 30),
-                ),
+              title: Text(
+                "NOODNUMMERS",
+                style: TextStyle(color: Colors.black, fontSize: 30),
               ),
               flexibleSpace: Container(
                 color: Colors.yellow,

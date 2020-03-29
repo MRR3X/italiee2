@@ -21,11 +21,14 @@ dependencies:
     sdk: flutter
   url_launcher: ^5.2.1
   gradient_app_bar: ^0.0.1
+  carousel_pro: ^1.0.0
+  http: ^0.12.0+2
+  webfeed: ^0.4.2
+  intl: ^0.15.8
+  webview_flutter: ^0.3.9
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
-
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -34,7 +37,7 @@ dev_dependencies:
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
-# The following section is specific to Flutter.
+# The following sectionis specific to Flutter.
 flutter:
 
   # The following line ensures that the Material Icons font is
@@ -48,6 +51,9 @@ flutter:
   #  - images/a_dot_ham.jpeg
   assets:
     - Images/logo.png
+    - Images/weer.png
+    - Images/kop.jpg
+    - Images/mr.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

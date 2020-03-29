@@ -1,17 +1,23 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:italiee2/Pages/Day1.dart';
-import 'package:italiee2/Pages/Day2.dart';
-import 'package:italiee2/Pages/Day3.dart';
-import 'package:italiee2/Pages/Day4.dart';
-import 'package:italiee2/Pages/Day5.dart';
-import 'package:italiee2/Pages/Day6.dart';
-import 'package:italiee2/Pages/Day7.dart';
-import 'package:italiee2/Pages/Day8.dart';
-import 'package:italiee2/Pages/Day9.dart';
-import 'package:italiee2/Pages/Contacten.dart';
+import 'package:italiee2/Days/Day1.dart';
+import 'package:italiee2/Days/Day2.dart';
+import 'package:italiee2/Days/Day3.dart';
+import 'package:italiee2/Days/Day4.dart';
+import 'package:italiee2/Days/Day5.dart';
+import 'package:italiee2/Days/Day6.dart';
+import 'package:italiee2/Days/Day7.dart';
+import 'package:italiee2/Days/Day8.dart';
+import 'package:italiee2/Days/Day9.dart';
+
 import 'package:italiee2/Pages/Emergency.dart';
-import 'package:italiee2/Drawers/Drawer.dart';
+import 'package:italiee2/Extra/Drawer.dart';
+
+import 'package:italiee2/Pages/News.dart';
+
+import 'Weather.dart';
 
 class Homepage extends StatelessWidget {
   @override
@@ -36,38 +42,37 @@ class Homepage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         AppBar(
-                          iconTheme: new IconThemeData(color: Colors.black),
+                          centerTitle: true,
+                          iconTheme: IconThemeData(color: Colors.black),
                           backgroundColor: Colors.transparent,
                           elevation: 0,
-                          title: Center(
-                            child: RichText(
-                              text: TextSpan(
-                                  text: 'Italië',
-                                  style: TextStyle(
-                                      color: Colors.green,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 45,
-                                      shadows: [
-                                        Shadow(
-                                            // bottomLeft
-                                            offset: Offset(-2, -1.5),
-                                            color: Colors.black),
-                                        Shadow(
-                                            offset: Offset(1.5, 1),
-                                            color: Colors.black)
-                                      ]),
-                                  children: <TextSpan>[
-                                    TextSpan(
-                                        text: ' reis',
-                                        style: TextStyle(color: Colors.red)),
-                                  ]),
-                            ),
+                          title: RichText(
+                            text: TextSpan(
+                                text: 'Italië',
+                                style: TextStyle(
+                                    color: Colors.green,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 45,
+                                    shadows: [
+                                      Shadow(
+                                          // bottomLeft
+                                          offset: Offset(-2, -1.5),
+                                          color: Colors.black),
+                                      Shadow(
+                                          offset: Offset(1.5, 1),
+                                          color: Colors.black)
+                                    ]),
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: ' reis',
+                                      style: TextStyle(color: Colors.red)),
+                                ]),
                           ),
                         ),
                       ]),
                 ),
               ),
-              drawer: Menu(),
+              endDrawer: Menu(),
               body: Center(
                 child: SafeArea(
                   child: Container(
@@ -79,94 +84,135 @@ class Homepage extends StatelessWidget {
                       child: ListView(children: <Widget>[
                         Container(
                             child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: <Widget>[
-                              Row(
-                                children: <Widget>[
-                                  SizedBox(
-                                    height: 25,
-                                  )
-                                ],
-                              ),
-                              Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: <Widget>[
-                                    Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            Row(
+                              children: <Widget>[
+                                SizedBox(
+                                  height: 25,
+                                )
+                              ],
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Column(children: <Widget>[
+                                  Row(
+                                    children: <Widget>[
+                                      SizedBox(
+                                        height: 25,
+                                      )
+                                    ],
+                                  ),
+                                  Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: <Widget>[
                                         SizedBox(
-                                          height: 25,
-                                        )
-                                      ],
-                                    ),
-                                    Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          SizedBox(
-                                              width: 100,
-                                              height: 100,
-                                              child: RaisedButton(
-                                                  shape:
-                                                      new RoundedRectangleBorder(
-                                                          borderRadius:
-                                                              new BorderRadius
-                                                                  .circular(0),
-                                                          side: BorderSide(
-                                                              color:
-                                                                  Colors.black,
-                                                              width: 2)),
-                                                  color: Colors.green,
-                                                  onPressed: () {
-                                                    Navigator.push(
-                                                      context,
-                                                      MaterialPageRoute(
-                                                          builder: (context) =>
-                                                              Day1()),
-                                                    );
-                                                  },
-                                                  child: Text(
-                                                    'Dag 1',
-                                                    style: TextStyle(
-                                                        fontSize: 17,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  ))),
-                                          SizedBox(
-                                              width: 100,
-                                              height: 100,
-                                              child: RaisedButton(
-                                                  shape:
-                                                      new RoundedRectangleBorder(
-                                                          borderRadius:
-                                                              new BorderRadius
-                                                                  .circular(0),
-                                                          side: BorderSide(
-                                                              color:
-                                                                  Colors.black,
-                                                              width: 2)),
-                                                  color: Colors.white,
-                                                  onPressed: () {
-                                                    Navigator.push(
-                                                      context,
-                                                      MaterialPageRoute(
-                                                          builder: (context) =>
-                                                              Day2()),
-                                                    );
-                                                  },
-                                                  child: Text(
-                                                    'Dag 2',
-                                                    style: TextStyle(
-                                                        fontSize: 17,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  ))),
-                                          SizedBox(
                                             width: 100,
                                             height: 100,
                                             child: RaisedButton(
+                                                shape:
+                                                    new RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            new BorderRadius
+                                                                .circular(0),
+                                                        side: BorderSide(
+                                                            color: Colors.black,
+                                                            width: 2)),
+                                                color: Colors.green,
+                                                onPressed: () {
+                                                  Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Day1()),
+                                                  );
+                                                },
+                                                child: Text(
+                                                  'Dag 1',
+                                                  style: TextStyle(
+                                                      fontSize: 17,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ))),
+                                        SizedBox(
+                                            width: 100,
+                                            height: 100,
+                                            child: RaisedButton(
+                                                shape:
+                                                    new RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            new BorderRadius
+                                                                .circular(0),
+                                                        side: BorderSide(
+                                                            color: Colors.black,
+                                                            width: 2)),
+                                                color: Colors.white,
+                                                onPressed: () {
+                                                  Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Day2()),
+                                                  );
+                                                },
+                                                child: Text(
+                                                  'Dag 2',
+                                                  style: TextStyle(
+                                                      fontSize: 17,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ))),
+                                        SizedBox(
+                                          width: 100,
+                                          height: 100,
+                                          child: RaisedButton(
+                                            shape: new RoundedRectangleBorder(
+                                                borderRadius:
+                                                    new BorderRadius.circular(
+                                                        0),
+                                                side: BorderSide(
+                                                    color: Colors.black,
+                                                    width: 2)),
+                                            color: Colors.red,
+                                            onPressed: () {
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          Day3()));
+                                            },
+                                            child: Text(
+                                              'Dag 3',
+                                              style: TextStyle(
+                                                  fontSize: 17,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                          ),
+                                        ),
+                                      ]),
+                                ]),
+                                Row(
+                                  children: <Widget>[
+                                    SizedBox(
+                                      height: 25,
+                                    )
+                                  ],
+                                ),
+                                Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      SizedBox(
+                                          width: 100,
+                                          height: 100,
+                                          child: RaisedButton(
                                               shape: new RoundedRectangleBorder(
                                                   borderRadius:
                                                       new BorderRadius.circular(
@@ -174,240 +220,300 @@ class Homepage extends StatelessWidget {
                                                   side: BorderSide(
                                                       color: Colors.black,
                                                       width: 2)),
-                                              color: Colors.red,
+                                              color: Colors.green,
                                               onPressed: () {
                                                 Navigator.push(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            Day3()));
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          Day4()),
+                                                );
                                               },
                                               child: Text(
-                                                'Dag 3',
+                                                'Dag 4',
                                                 style: TextStyle(
                                                     fontSize: 17,
                                                     fontWeight:
                                                         FontWeight.bold),
-                                              ),
-                                            ),
+                                              ))),
+                                      SizedBox(
+                                          width: 100,
+                                          height: 100,
+                                          child: RaisedButton(
+                                              shape: new RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      new BorderRadius.circular(
+                                                          0),
+                                                  side: BorderSide(
+                                                      color: Colors.black,
+                                                      width: 2)),
+                                              color: Colors.white,
+                                              onPressed: () {
+                                                Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          Day5()),
+                                                );
+                                              },
+                                              child: Text(
+                                                'Dag 5',
+                                                style: TextStyle(
+                                                    fontSize: 17,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ))),
+                                      SizedBox(
+                                        width: 100,
+                                        height: 100,
+                                        child: RaisedButton(
+                                          shape: new RoundedRectangleBorder(
+                                              borderRadius:
+                                                  new BorderRadius.circular(0),
+                                              side: BorderSide(
+                                                  color: Colors.black,
+                                                  width: 2)),
+                                          color: Colors.red,
+                                          onPressed: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        Day6()));
+                                          },
+                                          child: Text(
+                                            'Dag 6',
+                                            style: TextStyle(
+                                                fontSize: 17,
+                                                fontWeight: FontWeight.bold),
                                           ),
-                                        ]),
-                                  ]),
-                              Row(
-                                children: <Widget>[
-                                  SizedBox(
-                                    height: 25,
-                                  )
-                                ],
-                              ),
-                              Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: <Widget>[
-                                    SizedBox(
-                                        width: 100,
-                                        height: 100,
-                                        child: RaisedButton(
-                                            shape: new RoundedRectangleBorder(
-                                                borderRadius:
-                                                    new BorderRadius.circular(
-                                                        0),
-                                                side: BorderSide(
-                                                    color: Colors.black,
-                                                    width: 2)),
-                                            color: Colors.green,
-                                            onPressed: () {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        Day4()),
-                                              );
-                                            },
-                                            child: Text(
-                                              'Dag 4',
-                                              style: TextStyle(
-                                                  fontSize: 17,
-                                                  fontWeight: FontWeight.bold),
-                                            ))),
-                                    SizedBox(
-                                        width: 100,
-                                        height: 100,
-                                        child: RaisedButton(
-                                            shape: new RoundedRectangleBorder(
-                                                borderRadius:
-                                                    new BorderRadius.circular(
-                                                        0),
-                                                side: BorderSide(
-                                                    color: Colors.black,
-                                                    width: 2)),
-                                            color: Colors.white,
-                                            onPressed: () {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        Day5()),
-                                              );
-                                            },
-                                            child: Text(
-                                              'Dag 5',
-                                              style: TextStyle(
-                                                  fontSize: 17,
-                                                  fontWeight: FontWeight.bold),
-                                            ))),
-                                    SizedBox(
-                                      width: 100,
-                                      height: 100,
-                                      child: RaisedButton(
-                                        shape: new RoundedRectangleBorder(
-                                            borderRadius:
-                                                new BorderRadius.circular(0),
-                                            side: BorderSide(
-                                                color: Colors.black, width: 2)),
-                                        color: Colors.red,
-                                        onPressed: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      Day6()));
-                                        },
-                                        child: Text(
-                                          'Dag 6',
-                                          style: TextStyle(
-                                              fontSize: 17,
-                                              fontWeight: FontWeight.bold),
                                         ),
                                       ),
-                                    ),
-                                  ]),
-                              Row(
-                                children: <Widget>[
-                                  SizedBox(
-                                    height: 25,
-                                  )
-                                ],
-                              ),
-                              Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                    ]),
+                                Row(
                                   children: <Widget>[
                                     SizedBox(
+                                      height: 25,
+                                    )
+                                  ],
+                                ),
+                                Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      SizedBox(
+                                          width: 100,
+                                          height: 100,
+                                          child: RaisedButton(
+                                              shape: new RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      new BorderRadius.circular(
+                                                          0),
+                                                  side: BorderSide(
+                                                      color: Colors.black,
+                                                      width: 2)),
+                                              color: Colors.green,
+                                              onPressed: () {
+                                                Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          Day7()),
+                                                );
+                                              },
+                                              child: Text(
+                                                'Dag 7',
+                                                style: TextStyle(
+                                                    fontSize: 17,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ))),
+                                      SizedBox(
+                                          width: 100,
+                                          height: 100,
+                                          child: RaisedButton(
+                                              shape: new RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      new BorderRadius.circular(
+                                                          0),
+                                                  side: BorderSide(
+                                                      color: Colors.black,
+                                                      width: 2)),
+                                              color: Colors.white,
+                                              onPressed: () {
+                                                Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          Day8()),
+                                                );
+                                              },
+                                              child: Text(
+                                                'Dag 8',
+                                                style: TextStyle(
+                                                    fontSize: 17,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ))),
+                                      SizedBox(
                                         width: 100,
                                         height: 100,
                                         child: RaisedButton(
-                                            shape: new RoundedRectangleBorder(
-                                                borderRadius:
-                                                    new BorderRadius.circular(
-                                                        0),
-                                                side: BorderSide(
-                                                    color: Colors.black,
-                                                    width: 2)),
-                                            color: Colors.green,
-                                            onPressed: () {
-                                              Navigator.push(
+                                          shape: new RoundedRectangleBorder(
+                                              borderRadius:
+                                                  new BorderRadius.circular(0),
+                                              side: BorderSide(
+                                                  color: Colors.black,
+                                                  width: 2)),
+                                          color: Colors.red,
+                                          onPressed: () {
+                                            Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        Day7()),
-                                              );
-                                            },
-                                            child: Text(
-                                              'Dag 7',
-                                              style: TextStyle(
-                                                  fontSize: 17,
-                                                  fontWeight: FontWeight.bold),
-                                            ))),
-                                    SizedBox(
-                                        width: 100,
-                                        height: 100,
-                                        child: RaisedButton(
-                                            shape: new RoundedRectangleBorder(
-                                                borderRadius:
-                                                    new BorderRadius.circular(
-                                                        0),
-                                                side: BorderSide(
-                                                    color: Colors.black,
-                                                    width: 2)),
-                                            color: Colors.white,
-                                            onPressed: () {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        Day8()),
-                                              );
-                                            },
-                                            child: Text(
-                                              'Dag 8',
-                                              style: TextStyle(
-                                                  fontSize: 17,
-                                                  fontWeight: FontWeight.bold),
-                                            ))),
-                                    SizedBox(
-                                      width: 100,
-                                      height: 100,
-                                      child: RaisedButton(
-                                        shape: new RoundedRectangleBorder(
-                                            borderRadius:
-                                                new BorderRadius.circular(0),
-                                            side: BorderSide(
-                                                color: Colors.black, width: 2)),
-                                        color: Colors.red,
-                                        onPressed: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      Day9()));
-                                        },
-                                        child: Text(
-                                          'Dag 9',
-                                          style: TextStyle(
-                                              fontSize: 17,
-                                              fontWeight: FontWeight.bold),
+                                                        Day9()));
+                                          },
+                                          child: Text(
+                                            'Dag 9',
+                                            style: TextStyle(
+                                                fontSize: 17,
+                                                fontWeight: FontWeight.bold),
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                  ]),
-                              SizedBox(
-                                height: 50,
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  SizedBox(
-                                      width: 300,
-                                      height: 100,
-                                      child: RaisedButton(
-                                        shape: new RoundedRectangleBorder(
-                                            borderRadius:
-                                                new BorderRadius.circular(25),
-                                            side: BorderSide(
-                                                color: Colors.black, width: 2)),
-                                        color: Colors.yellow,
-                                        onPressed: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      Emergency()));
-                                        },
-                                        child: Text(
-                                          "NOODGEVAL",
-                                          style: TextStyle(fontSize: 30),
-                                          textAlign: TextAlign.center,
-                                        ),
-                                      )),
-                                ],
-                              ),
-                              SizedBox(
-                                height: 50,
-                              )
-                            ])),
+                                    ]),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 50,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                SizedBox(
+                                    width: 300,
+                                    height: 100,
+                                    child: RaisedButton(
+                                      shape: new RoundedRectangleBorder(
+                                          borderRadius:
+                                              new BorderRadius.circular(25),
+                                          side: BorderSide(
+                                              color: Colors.black, width: 2)),
+                                      color: Colors.yellow,
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    Emergency()));
+                                      },
+                                      child: Text(
+                                        "NOODGEVAL",
+                                        style: TextStyle(fontSize: 30),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    )),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 25,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                SizedBox(
+                                    width: 300,
+                                    height: 100,
+                                    child: RaisedButton(
+                                      shape: new RoundedRectangleBorder(
+                                          borderRadius:
+                                              new BorderRadius.circular(25),
+                                          side: BorderSide(
+                                              color: Colors.black, width: 2)),
+                                      color: Colors.blueGrey,
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    Emergency()));
+                                      },
+                                      child: Text(
+                                        "Contacten",
+                                        style: TextStyle(fontSize: 30),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    )),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 25,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                SizedBox(
+                                    width: 300,
+                                    height: 100,
+                                    child: RaisedButton(
+                                      shape: new RoundedRectangleBorder(
+                                          borderRadius:
+                                              new BorderRadius.circular(25),
+                                          side: BorderSide(
+                                              color: Colors.black, width: 2)),
+                                      color: Colors.white,
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) => News()));
+                                      },
+                                      child: Text(
+                                        "Nieuws",
+                                        style: TextStyle(fontSize: 30),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    )),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 25,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                SizedBox(
+                                    width: 300,
+                                    height: 100,
+                                    child: RaisedButton(
+                                      shape: new RoundedRectangleBorder(
+                                          borderRadius:
+                                              new BorderRadius.circular(25),
+                                          side: BorderSide(
+                                              color: Colors.black, width: 2)),
+                                      color: Colors.lightBlueAccent,
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    Weather()));
+                                      },
+                                      child: Text(
+                                        "Weer",
+                                        style: TextStyle(fontSize: 30),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    )),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 50,
+                            ),
+                          ],
+                        )),
                       ])),
                 ),
               )),

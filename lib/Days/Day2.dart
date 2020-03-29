@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:italiee2/Drawers/Drawer6.dart';
+import 'package:italiee2/Extra/Drawer1.dart';
 
-class Day6 extends StatelessWidget {
+class Day2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: Menu6(),
+      endDrawer: Menu1(),
       appBar: AppBar(
-        backgroundColor: Color(0xffff1f44),
-        title: Text("Dag 6"),
+        centerTitle: true,
+        backgroundColor: Color(0xededed),
+        title: Text("Dag 2"),
       ),
       body: Container(
         constraints: new BoxConstraints.expand(),

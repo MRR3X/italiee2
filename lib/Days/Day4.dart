@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
-import 'package:italiee2/Drawers/Drawer4.dart';
+import 'package:italiee2/Extra/Drawer1.dart';
 
 class Day4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        endDrawer: Menu4(),
+        endDrawer: Menu1(),
         appBar: AppBar(
+          centerTitle: true,
           iconTheme: new IconThemeData(color: Colors.black),
           backgroundColor: Color(0xff32a852),
           title: Text("Dag 4"),
