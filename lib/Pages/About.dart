@@ -21,6 +21,9 @@ class About extends StatelessWidget {
           color: Colors.green[200],
           child: ListView(
             children: <Widget>[
+              SizedBox(
+                height: 15,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -54,6 +57,7 @@ class About extends StatelessWidget {
                     elevation: 5,
                     margin: EdgeInsets.only(
                       right: 20,
+                      top: 15,
                       left: 20,
                     ),
                     child: Text(
@@ -69,6 +73,7 @@ class About extends StatelessWidget {
                       child: Card(
                     elevation: 5,
                     margin: EdgeInsets.only(
+                      top: 20,
                       right: 20,
                       left: 20,
                     ),
@@ -87,6 +92,7 @@ class About extends StatelessWidget {
                     margin: EdgeInsets.only(
                       right: 20,
                       left: 20,
+                      top: 20,
                     ),
                     child: Text(
                       "Daarnaast heb je toegang tot alle noodnummers en de nummers van alle begeleidende leerkrachten. De nummers kan je vinden in noodgeval en contacten ",
@@ -103,6 +109,7 @@ class About extends StatelessWidget {
                     margin: EdgeInsets.only(
                       right: 20,
                       left: 20,
+                      top: 20,
                     ),
                     child: Text(
                       "Tenslotte heb je nieuws en weer, daar kan je lokaal nieuws lezen en kijken hoe het weer morgen is.",
@@ -116,8 +123,7 @@ class About extends StatelessWidget {
                   Expanded(
                       child: Card(
                           elevation: 10,
-                          margin: EdgeInsets.only(
-                              top: 15, bottom: 15, right: 20, left: 20),
+                          margin: EdgeInsets.only(top: 20, right: 20, left: 20),
                           child: Image.asset(
                             "Images/kop.jpg",
                             height: 200,
@@ -132,6 +138,7 @@ class About extends StatelessWidget {
                     margin: EdgeInsets.only(
                       right: 20,
                       left: 20,
+                      top: 20,
                     ),
                     child: Text(
                       "De app is geschreven met de programmeertaal Flutter in Android Studio. Deze app is mijn gip en is geïnspireerd door meneer Vander Sanden met zijn Londen reis app.",
@@ -146,7 +153,7 @@ class About extends StatelessWidget {
                       child: Card(
                           elevation: 10,
                           margin: EdgeInsets.only(
-                              left: 20, right: 20, top: 15, bottom: 15),
+                              left: 20, right: 20, top: 20, bottom: 20),
                           child: Image.asset(
                             "Images/mr.jpg",
                             height: 200,

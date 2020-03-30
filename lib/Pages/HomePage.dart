@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:italiee2/Days/Day1.dart';
@@ -14,7 +12,6 @@ import 'package:italiee2/Days/Day9.dart';
 
 import 'package:italiee2/Pages/Emergency.dart';
 import 'package:italiee2/Extra/Drawer.dart';
-
 import 'package:italiee2/Pages/News.dart';
 
 import 'Weather.dart';
